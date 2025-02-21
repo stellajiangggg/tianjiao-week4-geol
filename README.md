@@ -96,7 +96,9 @@ Accuracy: Matches ESA’s classification closely.
 Misclassifications: Some sea ice regions misclassified due to waveform noise.
 ### confusion matrix
 true_labels length: 12195
+
 predicted_labels length: 12195
+
 Confusion Matrix:
 
 Classification Report:
