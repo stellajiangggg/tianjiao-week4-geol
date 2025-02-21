@@ -58,6 +58,76 @@ Fit models to extracted features and predict labels.
 
 Compute mean and standard deviation of classified waveforms.
 Compare results with ESA’s classification using a confusion matrix.
+To execute the clustering models:
+
+python
+Copy
+Edit
+from sklearn.cluster import KMeans
+from sklearn.mixture import GaussianMixture
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample Data
+X = np.random.rand(100, 2)
+
+# Apply K-means Clustering
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(X)
+y_kmeans = kmeans.predict(X)
+
+# Apply GMM Clustering
+gmm = GaussianMixture(n_components=2)
+gmm.fit(X)
+y_gmm = gmm.predict(X)
+
+# Plot Results
+plt.scatter(X[:, 0], X[:, 1], c=y_gmm, cmap='viridis')
+plt.title("Gaussian Mixture Model Clustering")
+plt.show()
+### Model Evaluation
+1️⃣ Plotting Mean & Standard Deviation of Echoes
+We compute the mean and standard deviation of classified waveforms:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Compute Mean and STD for each cluster
+mean_cluster0 = np.mean(waves_cleaned[clusters_gmm == 0], axis=0)
+std_cluster0  = np.std(waves_cleaned[clusters_gmm == 0], axis=0)
+
+mean_cluster1 = np.mean(waves_cleaned[clusters_gmm == 1], axis=0)
+std_cluster1  = np.std(waves_cleaned[clusters_gmm == 1], axis=0)
+
+# Plot with Shaded STD Regions
+plt.figure()
+plt.plot(mean_cluster0, label='Cluster 0 (Ice)')
+plt.fill_between(range(len(mean_cluster0)), mean_cluster0 - std_cluster0, mean_cluster0 + std_cluster0, alpha=0.3)
+plt.plot(mean_cluster1, label='Cluster 1 (Lead)')
+plt.fill_between(range(len(mean_cluster1)), mean_cluster1 - std_cluster1, mean_cluster1 + std_cluster1, alpha=0.3)
+plt.title("Average Echo Shape ± 1 STD")
+plt.xlabel("Range Bin")
+plt.ylabel("Echo Power")
+plt.legend()
+plt.show()
+2️⃣ Confusion Matrix & Classification Report
+To assess the model performance against ESA ground truth:
+
+
+from sklearn.metrics import confusion_matrix, classification_report
+
+# Convert ESA flags {1,2} → {0,1} (0 = sea ice, 1 = lead)
+flag_adjusted = flag_cleaned[(flag_cleaned==1) | (flag_cleaned==2)] - 1
+
+# Compute Confusion Matrix
+conf_m = confusion_matrix(flag_adjusted, clusters_gmm)
+print("Confusion Matrix:\n", conf_m)
+
+# Generate Classification Report
+print("\nClassification Report:")
+print(classification_report(flag_adjusted, clusters_gmm))
+
 ## Results
 ### K-Means Clustering on Sentinel-2 Bands
 
