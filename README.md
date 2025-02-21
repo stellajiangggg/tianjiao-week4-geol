@@ -100,6 +100,8 @@ true_labels length: 12195
 predicted_labels length: 12195
 
 Confusion Matrix:
+[[8856   22]
+ [  24 3293]]
 
 Classification Report:
               precision    recall  f1-score   support
