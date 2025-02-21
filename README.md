@@ -10,18 +10,20 @@ This repository contains code and instructions for classifying **Sentinel altime
 
 ---
 
-##  Repository Contents
-📦 Sentinel-Altimetry-Classification ┣ 📜 notebook.ipynb # Jupyter Notebook with full implementation ┣ 📜 README.md # Project overview, setup, and execution instructions ┗ 📜 requirements.txt # List of required Python packages
+## 🔗 Important Links
 
-yaml
-Copy
-Edit
+[![🔵](https://img.shields.io/badge/Jupyter-Notebook-blue)](https://cpomucl.github.io/GEOL0069-AI4EO/Chapter1_Unsupervised_Learning_Methods_2.html#)  
+📘 **Jupyter Notebook (HTML Version):**  
+[View the Jupyter Notebook](https://cpomucl.github.io/GEOL0069-AI4EO/Chapter1_Unsupervised_Learning_Methods_2.html#)  
+
+[![📂](https://img.shields.io/badge/Google-Drive-grey)](https://drive.google.com/drive/folders/1SxmGM9_UJk-M5bEOoTfM_4urvr0257H3)  
+📂 **Google Drive Folder (Project Materials):**  
+[Access the Google Drive Folder](https://drive.google.com/drive/folders/1SxmGM9_UJk-M5bEOoTfM_4urvr0257H3)  
+
 
 ---
 
 ## ⚙️ Requirements
 This project runs best in **Google Colab** but can be executed locally. 
 
-### 📌 Install dependencies (if running locally):
-```bash
-pip install -r requirements.txt
+
