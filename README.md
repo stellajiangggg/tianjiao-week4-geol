@@ -59,7 +59,7 @@ Fit models to extracted features and predict labels.
 Compute mean and standard deviation of classified waveforms.
 Compare results with ESA’s classification using a confusion matrix.
 ## Results
-# K-Means Clustering on Sentinel-2 Bands
+### K-Means Clustering on Sentinel-2 Bands
 
 plt.imshow(labels_image, cmap='viridis')
 plt.title('K-means clustering on Sentinel-2 Bands')
@@ -68,22 +68,22 @@ plt.show()
 Cluster 0: Sea Ice
 Cluster 1: Leads
 
-# Gaussian Mixture Model (GMM) Clustering
+### Gaussian Mixture Model (GMM) Clustering
 plt.scatter(X[:, 0], X[:, 1], c=y_gmm, cmap='viridis')
 plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
 plt.title('Gaussian Mixture Model')
 plt.show()
 GMM clusters echoes based on statistical properties.
 
-Mean Echo Plots for Sea Ice and Leads
+### Mean Echo Plots for Sea Ice and Leads
 
 Sea Ice Echo: Lower amplitude, uniform.
 Lead Echo: Higher amplitude, sharp spikes.
-Standard Deviation of Echoes
+### Standard Deviation of Echoes
 
 Lead echoes show greater variability than sea ice.
 Standard deviation analysis aligns with ESA classification.
-Confusion Matrix and Classification Report
+### Confusion Matrix and Classification Report
 
 from sklearn.metrics import confusion_matrix, classification_report  
 
