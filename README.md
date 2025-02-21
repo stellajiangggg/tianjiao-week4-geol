@@ -11,3 +11,17 @@ This repository contains code and instructions for classifying **Sentinel altime
 ---
 
 ##  Repository Contents
+📦 Sentinel-Altimetry-Classification ┣ 📜 notebook.ipynb # Jupyter Notebook with full implementation ┣ 📜 README.md # Project overview, setup, and execution instructions ┗ 📜 requirements.txt # List of required Python packages
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ Requirements
+This project runs best in **Google Colab** but can be executed locally. 
+
+### 📌 Install dependencies (if running locally):
+```bash
+pip install -r requirements.txt
