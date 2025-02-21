@@ -94,4 +94,18 @@ print("\nClassification Report:")
 print(classification_report(flag_adjusted, clusters_gmm))  
 Accuracy: Matches ESA’s classification closely.
 Misclassifications: Some sea ice regions misclassified due to waveform noise.
+### confusion matrix
+true_labels length: 12195
+predicted_labels length: 12195
+Confusion Matrix:
+
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00      8878
+         1.0       0.99      0.99      0.99      3317
+
+    accuracy                           1.00     12195
+   macro avg       1.00      1.00      1.00     12195
+weighted avg       1.00      1.00      1.00     12195
 
