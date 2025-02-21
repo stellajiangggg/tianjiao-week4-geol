@@ -44,16 +44,19 @@ This project runs best in **Google Colab** but can be executed locally.
 
 ## Methodology
  Steps:
+
 1️⃣ Preprocessing:
 
 Load Sentinel-3 waveform data from NetCDF files.
 Remove NaN values and filter signals.
 Extract key features: peakiness, standard deviation, echo shape.
+
 2️⃣ Unsupervised Clustering (K-Means & GMM):
 
 K-Means Clustering on Sentinel-2 bands (B2, B3, B4).
 GMM clustering applied to altimetry waveform data.
 Fit models to extracted features and predict labels.
+
 3️⃣ Evaluation:
 
 Compute mean and standard deviation of classified waveforms.
